@@ -1,4 +1,10 @@
 Booknotes::Application.routes.draw do
+
+  resources :cards do
+    resources :bookmarks
+  end
+
+  root 'cards#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

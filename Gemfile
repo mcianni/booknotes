@@ -28,6 +28,10 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+end
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
