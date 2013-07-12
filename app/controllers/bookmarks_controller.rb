@@ -7,13 +7,6 @@ class BookmarksController < ApplicationController
     @card = Card.find(params[:card_id])
   end
 
-  # GET /bookmarks
-  # GET /bookmarks.json
-  def index
-    @bookmarks = Bookmark.all
-  end
-
-  # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
   end
@@ -34,7 +27,7 @@ class BookmarksController < ApplicationController
 
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+        format.html { redirect_to [@card, @bookmark], notice: 'Bookmark was successfully created.' }
         format.json { render action: 'show', status: :created, location: @bookmark }
       else
         format.html { render action: 'new' }
@@ -48,7 +41,7 @@ class BookmarksController < ApplicationController
   def update
     respond_to do |format|
       if @bookmark.update(bookmark_params)
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
+        format.html { redirect_to [@card, @bookmark], notice: 'Bookmark was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -62,7 +55,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark.destroy
     respond_to do |format|
-      format.html { redirect_to bookmarks_url }
+      format.html { redirect_to card_bookmarks_url(@card) }
       format.json { head :no_content }
     end
   end

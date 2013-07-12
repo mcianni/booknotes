@@ -1,7 +1,7 @@
 Booknotes::Application.routes.draw do
 
   resources :cards do
-    resources :bookmarks
+    resources :bookmarks, except: [:index]
   end
 
   root 'cards#index'

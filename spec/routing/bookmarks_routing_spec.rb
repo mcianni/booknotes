@@ -3,10 +3,6 @@ require "spec_helper"
 describe BookmarksController do
   describe "routing" do
 
-    it "routes to #index" do
-      get("/cards/1/bookmarks").should route_to("bookmarks#index", :card_id => "1")
-    end
-
     it "routes to #new" do
       get("/cards/1/bookmarks/new").should route_to("bookmarks#new", :card_id => "1")
     end

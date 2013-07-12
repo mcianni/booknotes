@@ -9,11 +9,16 @@ describe "bookmarks/edit" do
     ))
   end
 
+  before(:each) do 
+    @card = Card.new({ title: 'Test Card' })
+    @card.save!
+  end
+  
   it "renders the edit bookmark form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form[action=?][method=?]", bookmark_path(@bookmark), "post" do
+    assert_select "form[action=?][method=?]", card_bookmark_path(@card, @bookmark), "post" do
       assert_select "input#bookmark_title[name=?]", "bookmark[title]"
       assert_select "input#bookmark_url[name=?]", "bookmark[url]"
       assert_select "input#bookmark_card[name=?]", "bookmark[card]"
