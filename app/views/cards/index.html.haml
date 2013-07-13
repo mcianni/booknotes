@@ -1,19 +1,11 @@
-%h1 Listing cards
+%h1 My cards
 
-%table
-  %tr
-    %th Title
-    %th
-    %th
-    %th
+%table.table.table-striped
 
   - @cards.each do |card|
     %tr
-      %td= card.title
-      %td= link_to 'Show', card
-      %td= link_to 'Edit', edit_card_path(card)
-      %td= link_to 'Destroy', card, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to card.title, card
 
 %br
 
-= link_to 'New Card', new_card_path
+= link_to 'New Card', new_card_path, class: 'btn'

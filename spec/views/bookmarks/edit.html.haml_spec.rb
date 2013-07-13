@@ -10,8 +10,9 @@ describe "bookmarks/edit" do
   end
 
   before(:each) do 
-    @card = Card.new({ title: 'Test Card' })
-    @card.save!
+    @card = assign(:card, stub_model(Card,
+       :title => 'Test Card'
+    )) 
   end
   
   it "renders the edit bookmark form" do
@@ -21,7 +22,6 @@ describe "bookmarks/edit" do
     assert_select "form[action=?][method=?]", card_bookmark_path(@card, @bookmark), "post" do
       assert_select "input#bookmark_title[name=?]", "bookmark[title]"
       assert_select "input#bookmark_url[name=?]", "bookmark[url]"
-      assert_select "input#bookmark_card[name=?]", "bookmark[card]"
     end
   end
 end

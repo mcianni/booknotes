@@ -2,10 +2,14 @@ require 'spec_helper'
 
 describe "bookmarks/show" do
   before(:each) do
+    @card = assign(:card, stub_model(Card,
+      :title => "Test Card"
+    ))
+    
     @bookmark = assign(:bookmark, stub_model(Bookmark,
       :title => "Title",
       :url => "Url",
-      :card => nil
+      :card => @card
     ))
   end
 

@@ -2,13 +2,18 @@ require 'spec_helper'
 
 describe BookmarksController do
 
+  before(:each) do
+    @card = Card.new(title: "Test Card")
+    @card.save!
+  end
+ 
   # This should return the minimal set of attributes required to create a valid
   # Bookmark. As you add validations to Bookmark, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) { { 
     "title" => "MyString",
     "url"   => "http://google.com",
-    "card_id" => 0
+    "card_id" => @card.id
   
   } }
 
@@ -17,11 +22,7 @@ describe BookmarksController do
   # BookmarksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  before(:each) do
-    @card = Card.new(title: "Test Card")
-    @card.save!
-  end
-  
+ 
   describe "GET show" do
     it "assigns the requested bookmark as @bookmark" do
       bookmark = Bookmark.create! valid_attributes

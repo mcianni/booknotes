@@ -12,8 +12,6 @@
   .field
     = f.label :url
     = f.text_field :url
-  .field
-    = f.label :card
-    = f.text_field :card
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn btn-primary'
+    = link_to 'Cancel', @card, class: 'btn'

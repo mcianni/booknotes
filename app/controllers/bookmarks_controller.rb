@@ -13,7 +13,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/new
   def new
-    @bookmark = Bookmark.new
+    @bookmark = @card.bookmarks.new
   end
 
   # GET /bookmarks/1/edit
@@ -23,7 +23,7 @@ class BookmarksController < ApplicationController
   # POST /bookmarks
   # POST /bookmarks.json
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = @card.bookmarks.new(bookmark_params)
 
     respond_to do |format|
       if @bookmark.save

@@ -1,4 +1,3 @@
-%p#notice= notice
 
 %p
   %b Title:
@@ -6,10 +5,7 @@
 %p
   %b Url:
   = @bookmark.url
-%p
-  %b Card:
-  = @bookmark.card
 
 = link_to 'Edit', edit_card_bookmark_path(@card, @bookmark)
 \|
-= link_to 'Back', card_bookmarks_path(@card)
+= link_to 'Back', @card 
