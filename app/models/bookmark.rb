@@ -3,4 +3,6 @@ class Bookmark < ActiveRecord::Base
   validates :card_id, presence: true
   validates :title,   presence: true
   validates :url,     presence: true
+  
+  mount_uploader :screenshot, ScreenshotUploader
 end
