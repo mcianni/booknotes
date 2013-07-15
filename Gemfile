@@ -13,9 +13,13 @@ gem 'less-rails'
 gem 'therubyracer'
 gem 'haml'
 gem 'carrierwave'
+gem 'phantomjs.rb'
+gem 'delayed_job', git: "git://github.com/collectiveidea/delayed_job.git"
+gem 'delayed_job_active_record', git: "git://github.com/collectiveidea/delayed_job_active_record.git"
 
 group :development do
   gem 'haml-rails'
+  gem 'pry'
 end
 
 group :development, :test do

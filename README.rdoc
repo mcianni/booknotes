@@ -1,5 +1,18 @@
 == README
 
+Requirements:
+* Phantomjs
+
+Screenshot jobs are played into a delayed_job queue. Work them off with:
+rake jobs:work
+
+
+
+
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

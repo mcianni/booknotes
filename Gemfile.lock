@@ -1,4 +1,19 @@
 GIT
+  remote: git://github.com/collectiveidea/delayed_job.git
+  revision: 44edd9473adbc415a3e51ead60a63107a9ad41e4
+  specs:
+    delayed_job (4.0.0.beta2)
+      activesupport (>= 3.0, < 4.1)
+
+GIT
+  remote: git://github.com/collectiveidea/delayed_job_active_record.git
+  revision: ba49bf6c5eb2a4c5197630b24702a06e7c61a416
+  specs:
+    delayed_job_active_record (4.0.0.beta3)
+      activerecord (>= 3.0, < 4.1)
+      delayed_job (>= 3.0, < 4.1)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: cdda8d78b41275e1fa4a6d7aa71b370573ca2553
   specs:
@@ -41,6 +56,7 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -79,10 +95,18 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    phantomjs-mac (0.0.3)
+    phantomjs.rb (0.0.5)
+      phantomjs-mac
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -125,6 +149,7 @@ GEM
       rdoc (~> 3.10)
     shoulda-matchers (2.2.0)
       activesupport (>= 3.0.0)
+    slop (3.4.5)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -162,11 +187,15 @@ PLATFORMS
 DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
+  delayed_job!
+  delayed_job_active_record!
   haml
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
+  phantomjs.rb
+  pry
   rails (= 4.0.0)
   rspec-rails
   sass-rails (~> 4.0.0)

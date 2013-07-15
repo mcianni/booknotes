@@ -2,7 +2,6 @@ class BookmarksController < ApplicationController
   before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
   before_filter :load_card
 
-
   def load_card
     @card = Card.find(params[:card_id])
   end

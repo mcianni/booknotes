@@ -6,6 +6,8 @@
   %b Url:
   = @bookmark.url
 
+= image_tag @bookmark.screenshot.url
+
 = link_to 'Edit', edit_card_bookmark_path(@card, @bookmark)
 \|
 = link_to 'Back', @card 
