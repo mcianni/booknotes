@@ -4,7 +4,7 @@ class ScreenshotJob < Struct.new(:bookmark, :path)
    
     # Save a screenshot to the tmp_path, carrierwave will 
     # move it to its final destination 
-    tmp_path = Phantomjs.run(script, bookmark.url, path)
+    Phantomjs.run(script, bookmark.url, path)
     bookmark.screenshot = File.open(path)
     bookmark.save!
   end

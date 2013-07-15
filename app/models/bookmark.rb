@@ -8,7 +8,6 @@ class Bookmark < ActiveRecord::Base
 
   after_create :enqueue_screenshot_job
 
-
   private
     def enqueue_screenshot_job
       Delayed::Job.enqueue ScreenshotJob.new(self, tmp_path)

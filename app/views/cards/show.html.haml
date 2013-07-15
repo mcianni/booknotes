@@ -2,15 +2,19 @@
   %h1= @card.title 
 
 - unless @bookmarks.blank?
-  - @bookmarks.each do |bookmark|
-    .card.span4
-      %a{ href: bookmark.url }= bookmark.title
+  %ul.thumbnails
+    - @bookmarks.each do |bookmark|
+      %li.bookmark.span4
+        %a{ href: bookmark.url }
+          .data
+            .title= bookmark.title
+            = image_tag bookmark.screenshot.url(:thumb), class: 'screenshot'
 - else
   .alert.alert-block
     %p
       You haven't added any bookmarks yet!
     = link_to 'Add one now', new_card_bookmark_path(@card)
 
-= link_to 'New Bookmark', new_card_bookmark_path(@card), class: 'btn'
-
-= link_to 'Edit', edit_card_path(@card), class: 'btn'
+.actions.clearfix
+  = link_to 'New Bookmark', new_card_bookmark_path(@card), class: 'btn'
+  = link_to 'Edit', edit_card_path(@card), class: 'btn'

@@ -8,11 +8,18 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
+#
+gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', git: "git://github.com/seyhunak/twitter-bootstrap-rails.git"
 gem 'less-rails'
 gem 'therubyracer'
 gem 'haml'
+
+# Image handling
 gem 'carrierwave'
+gem 'mini_magick'
+
+# Screenshot capturing
 gem 'phantomjs.rb'
 gem 'delayed_job', git: "git://github.com/collectiveidea/delayed_job.git"
 gem 'delayed_job_active_record', git: "git://github.com/collectiveidea/delayed_job_active_record.git"
@@ -30,7 +37,6 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

@@ -2,6 +2,7 @@
 
 Requirements:
 * Phantomjs
+* RMagick
 
 Screenshot jobs are played into a delayed_job queue. Work them off with:
 rake jobs:work

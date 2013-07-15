@@ -62,7 +62,7 @@ describe BookmarksController do
 
       it "redirects to the created bookmark" do
         post :create, { :card_id => @card.id, :bookmark => valid_attributes}, valid_session
-        response.should redirect_to([@card, Bookmark.last])
+        response.should redirect_to(@card)
       end
     end
 

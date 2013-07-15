@@ -10,7 +10,7 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
-    @bookmarks = @card.bookmarks
+    @bookmarks = @card.bookmarks.order("created_at DESC")
   end
 
   # GET /cards/new
